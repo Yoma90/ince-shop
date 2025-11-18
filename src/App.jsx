@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { base44 } from "@/api/base44Client";
 import { 
@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-export default function App({ children, currentPageName }) {
+export default function App() {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -61,7 +61,7 @@ export default function App({ children, currentPageName }) {
     return () => window.removeEventListener("cartUpdated", updateCartCount);
   }, []);
 
-  const isAdminPage = currentPageName?.startsWith("Admin");
+  const isAdminPage = location.pathname.startsWith("/admin");
 
   if (isAdminPage) {
     return (
@@ -72,7 +72,7 @@ export default function App({ children, currentPageName }) {
             --secondary: ${settings?.secondary_color || '#D4AF37'};
           }
         `}</style>
-        {children}
+        <Outlet />
       </div>
     );
   }
@@ -235,7 +235,7 @@ export default function App({ children, currentPageName }) {
 
       {/* Main Content */}
       <main className="pt-16 md:pt-20">
-        {children}
+        <Outlet />
       </main>
 
       {/* Footer */}

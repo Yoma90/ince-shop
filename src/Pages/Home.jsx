@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, TrendingUp, ShoppingBag } from "lucide-react";
-import ProductCard from "./components/ProductCard";
+import ProductCard from "@/components/ProductCard";
 
 export default function Home() {
   const [settings, setSettings] = useState(null);

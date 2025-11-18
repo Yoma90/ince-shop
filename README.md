@@ -1,16 +1,65 @@
-# React + Vite
+# inceShop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application e-commerce complète (frontend React + backend Express) pour la gestion d’une boutique de matériel de beauté.
 
-Currently, two official plugins are available:
+## Prérequis
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js 18+
+- npm 9+
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install              # dépendances frontend
+cd backend && npm install # dépendances backend
+```
 
-## Expanding the ESLint configuration
+## Lancement en développement
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Dans deux terminaux séparés :
+
+```bash
+# Backend API (http://localhost:4000)
+npm run backend
+
+# Frontend Vite (http://localhost:5173)
+npm run dev
+```
+
+Le frontend communique avec l’API via `VITE_API_URL` (par défaut `http://localhost:4000/api`). Créez un fichier `.env` à la racine si vous devez changer l’URL :
+
+```
+VITE_API_URL=http://localhost:4000/api
+```
+
+## Scripts utiles
+
+| Commande               | Description                                  |
+|------------------------|----------------------------------------------|
+| `npm run dev`          | Démarre le frontend avec Vite                |
+| `npm run build`        | Build de production du frontend              |
+| `npm run preview`      | Prévisualisation du build Vite               |
+| `npm run lint`         | Lint du code React                           |
+| `npm run backend`      | Lance l’API Express (via nodemon)            |
+| `npm --prefix backend start` | Lance l’API en mode production        |
+
+## Backend
+
+- API REST Express avec stockage JSON (`backend/db.json` généré automatiquement au premier démarrage)
+- Endpoints : produits, catégories, paramètres, commandes, auth fictive, upload de fichiers et journalisation des messages.
+- Les fichiers envoyés sont stockés dans `backend/uploads/`.
+
+## Frontend
+
+- React 19 + Vite
+- TailwindCSS pour le design
+- React Router pour la navigation
+- React Query pour les appels API
+- Composants UI maison (`src/components/ui`)
+
+## Tests manuels recommandés
+
+1. Démarrer backend + frontend (`npm run backend` et `npm run dev`)
+2. Vérifier le catalogue, la recherche, le panier et le checkout
+3. Tester l’espace admin (produits, commandes, paramètres)
+4. Vérifier l’upload d’images et la mise à jour des paramètres

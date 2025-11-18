@@ -4,7 +4,6 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Eye, Download } from "lucide-react";
@@ -97,20 +96,19 @@ export default function AdminOrders() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Filters */}
         <div className="bg-white rounded-lg p-4 mb-6 flex gap-4">
-          <Select value={filterStatus} onValueChange={setFilterStatus}>
-            <SelectTrigger className="w-48">
-              <SelectValue placeholder="Filtrer par statut" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">Toutes les commandes</SelectItem>
-              <SelectItem value="pending">En attente</SelectItem>
-              <SelectItem value="confirmed">Confirmées</SelectItem>
-              <SelectItem value="preparing">En préparation</SelectItem>
-              <SelectItem value="shipped">Expédiées</SelectItem>
-              <SelectItem value="delivered">Livrées</SelectItem>
-              <SelectItem value="cancelled">Annulées</SelectItem>
-            </SelectContent>
-          </Select>
+          <select
+            value={filterStatus}
+            onChange={(e) => setFilterStatus(e.target.value)}
+            className="w-48 h-12 rounded-xl border border-gray-200 px-4 text-sm bg-white focus:border-[var(--primary)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/20"
+          >
+            <option value="all">Toutes les commandes</option>
+            <option value="pending">En attente</option>
+            <option value="confirmed">Confirmées</option>
+            <option value="preparing">En préparation</option>
+            <option value="shipped">Expédiées</option>
+            <option value="delivered">Livrées</option>
+            <option value="cancelled">Annulées</option>
+          </select>
           <div className="text-sm text-gray-600 flex items-center">
             {filteredOrders.length} commande{filteredOrders.length > 1 ? 's' : ''}
           </div>
@@ -215,22 +213,20 @@ export default function AdminOrders() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-2">Changer le statut</p>
-                  <Select
+                  <select
                     value={selectedOrder.status}
-                    onValueChange={(status) => updateStatusMutation.mutate({ id: selectedOrder.id, status })}
+                    onChange={(e) =>
+                      updateStatusMutation.mutate({ id: selectedOrder.id, status: e.target.value })
+                    }
+                    className="w-48 h-11 rounded-xl border border-gray-200 px-3 text-sm bg-white focus:border-[var(--primary)] focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/20"
                   >
-                    <SelectTrigger className="w-48">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="pending">En attente</SelectItem>
-                      <SelectItem value="confirmed">Confirmée</SelectItem>
-                      <SelectItem value="preparing">En préparation</SelectItem>
-                      <SelectItem value="shipped">Expédiée</SelectItem>
-                      <SelectItem value="delivered">Livrée</SelectItem>
-                      <SelectItem value="cancelled">Annulée</SelectItem>
-                    </SelectContent>
-                  </Select>
+                    <option value="pending">En attente</option>
+                    <option value="confirmed">Confirmée</option>
+                    <option value="preparing">En préparation</option>
+                    <option value="shipped">Expédiée</option>
+                    <option value="delivered">Livrée</option>
+                    <option value="cancelled">Annulée</option>
+                  </select>
                 </div>
               </div>
 

@@ -6,7 +6,7 @@ import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Check, Package, Truck, Shield, ArrowLeft } from "lucide-react";
-import ProductCard from "./components/ProductCard";
+import ProductCard from "@/components/ProductCard";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function ProductDetail() {

@@ -3,7 +3,7 @@ import { base44 } from "@/api/base44Client";
 import { useQuery } from "@tanstack/react-query";
 import { Input } from "@/components/ui/input";
 import { Search as SearchIcon, X } from "lucide-react";
-import ProductCard from "./components/ProductCard";
+import ProductCard from "@/components/ProductCard";
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
