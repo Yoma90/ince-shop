@@ -149,7 +149,7 @@ export default function App() {
                     <Heart className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
-                    {settings?.site_name || "Beauté Store"}
+                    {settings?.site_name || "Ince-Shop"}
                   </span>
                 </div>
               )}
@@ -245,7 +245,7 @@ export default function App() {
             {/* About */}
             <div>
               <h3 className="text-lg font-bold text-gray-900 mb-4">
-                {settings?.site_name || "Beauté Store"}
+                {settings?.site_name || "Ince-Shop"}
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Votre destination pour l'équipement professionnel de beauté et coiffure de qualité supérieure.
@@ -308,7 +308,7 @@ export default function App() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
-            <p>&copy; {new Date().getFullYear()} {settings?.site_name || "Beauté Store"}. Tous droits réservés.</p>
+            <p>&copy; {new Date().getFullYear()} {settings?.site_name || "Ince-Shop"}. Tous droits réservés.</p>
           </div>
         </div>
       </footer>

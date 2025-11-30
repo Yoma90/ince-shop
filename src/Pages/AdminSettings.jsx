@@ -128,7 +128,7 @@ export default function AdminSettings() {
                   id="site_name"
                   value={formData.site_name}
                   onChange={(e) => setFormData({...formData, site_name: e.target.value})}
-                  placeholder="Beauté Store"
+                  placeholder="Ince Shop"
                 />
               </div>
 
@@ -231,7 +231,7 @@ export default function AdminSettings() {
                   id="contact_phone"
                   value={formData.contact_phone}
                   onChange={(e) => setFormData({...formData, contact_phone: e.target.value})}
-                  placeholder="+225 XX XX XX XX XX"
+                  placeholder="+237 655-669-407/658-288-757"
                 />
               </div>
 
@@ -241,7 +241,7 @@ export default function AdminSettings() {
                   id="contact_whatsapp"
                   value={formData.contact_whatsapp}
                   onChange={(e) => setFormData({...formData, contact_whatsapp: e.target.value})}
-                  placeholder="+225 XX XX XX XX XX"
+                  placeholder="+237 655-669-407/654-764-207"
                 />
               </div>
 
@@ -252,7 +252,7 @@ export default function AdminSettings() {
                   type="email"
                   value={formData.contact_email}
                   onChange={(e) => setFormData({...formData, contact_email: e.target.value})}
-                  placeholder="contact@exemple.com"
+                  placeholder="jcnawe@gmail.com"
                 />
               </div>
 
@@ -263,26 +263,7 @@ export default function AdminSettings() {
                   value={formData.contact_address}
                   onChange={(e) => setFormData({...formData, contact_address: e.target.value})}
                   rows={3}
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="facebook_url">Facebook</Label>
-                <Input
-                  id="facebook_url"
-                  value={formData.facebook_url}
-                  onChange={(e) => setFormData({...formData, facebook_url: e.target.value})}
-                  placeholder="https://facebook.com/..."
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="instagram_url">Instagram</Label>
-                <Input
-                  id="instagram_url"
-                  value={formData.instagram_url}
-                  onChange={(e) => setFormData({...formData, instagram_url: e.target.value})}
-                  placeholder="https://instagram.com/..."
+                  placeholder="Yaoundé, Cameroun"
                 />
               </div>
             </div>

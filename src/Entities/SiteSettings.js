@@ -4,7 +4,7 @@
             "properties": {
         "site_name": {
             "type": "string",
-                "description": "Nom du site"
+                "description": "INCE-SHOP"
         },
         "logo_url": {
             "type": "string",
