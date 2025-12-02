@@ -81,9 +81,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `site_settings` (`id`, `site_name`, `banner_title`, `banner_subtitle`, `contact_phone`, `contact_email`, `contact_address`, `facebook_url`, `instagram_url`, `delivery_fee`, `free_delivery_threshold`)
+INSERT INTO `site_settings` (`id`, `site_name`, `banner_title`, `banner_subtitle`, `contact_phone`, `contact_email`, `contact_address`, `delivery_fee`, `free_delivery_threshold`)
 VALUES
-  ('settings-1', 'Beauté Store', 'Équipements professionnels de beauté', 'Découvrez une sélection premium pour votre salon', '+225 07 00 00 00 00', 'contact@beautestore.ci', 'Abidjan, Côte d''Ivoire', 'https://facebook.com', 'https://instagram.com', 2000, 100000)
+  ('settings-1', 'Ince Shop', 'Équipements professionnels de beauté', 'Découvrez une sélection premium pour votre salon', '+237 655-669-407/658-288-757', 'jcnawe@gmail.com', 'Yaoundé, Cameroun', 2000, 100000)
 ON DUPLICATE KEY UPDATE `site_name`=VALUES(`site_name`);
 
 INSERT INTO `categories` (`id`, `name`, `order_index`)
@@ -124,6 +124,6 @@ VALUES (
 ) ON DUPLICATE KEY UPDATE `order_number`=`order_number`;
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `role`)
-VALUES ('user-1', 'Admin InceShop', 'admin@inceshop.local', 'admin')
+VALUES ('user-1', 'Admin InceShop', 'jcnawe@gmail.com', 'admin')
 ON DUPLICATE KEY UPDATE `full_name`=VALUES(`full_name`);
 
