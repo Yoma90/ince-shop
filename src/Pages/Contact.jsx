@@ -151,14 +151,6 @@ ${formData.message}
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[var(--primary)]/10 to-[var(--secondary)]/10 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Horaires d'ouverture</h3>
-              <div className="space-y-2 text-gray-600">
-                <p>Lundi - Vendredi: 8h00 - 18h00</p>
-                <p>Samedi: 9h00 - 17h00</p>
-                <p>Dimanche: Fermé</p>
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}

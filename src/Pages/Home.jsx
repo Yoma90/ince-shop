@@ -6,6 +6,7 @@ import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, TrendingUp, ShoppingBag } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
+import defaultCategoryImage from "@/assets/images/couverture esthétique.jfif";
 
 export default function Home() {
   const [settings, setSettings] = useState(null);
@@ -155,9 +156,10 @@ export default function Home() {
                   <div 
                     className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-500"
                     style={{ 
-                      backgroundImage: `url(${category.image_url || 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500'})` 
+                      backgroundImage: `url(${category.image_url || defaultCategoryImage})` 
                     }}
                   />
+                  
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   <div className="absolute inset-0 flex items-end p-4">
                     <h3 className="text-white font-bold text-lg group-hover:text-[var(--primary)] transition-colors">

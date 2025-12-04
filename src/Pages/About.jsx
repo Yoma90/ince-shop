@@ -20,15 +20,13 @@ export default function About() {
     }
   };
 
-  const defaultText = `Bienvenue dans notre univers beauté !
+  const defaultText = `Bienvenue dans l’univers beauté d’Ince-Shop !
 
-Nous sommes une entreprise spécialisée dans la fourniture d'équipements professionnels de haute qualité pour les salons de beauté, coiffure et instituts de soins.
+  Spécialisé dans la vente d’équipements de haute qualité, Ince-Shop vous propose une sélection pointue de produits destinés à créer un espace beauté élégant, confortable et performant, même à la maison.
 
-Notre mission est de vous accompagner dans la réussite de votre activité en vous proposant des produits innovants, durables et esthétiques qui subliment vos espaces professionnels.
-
-Forte d'une expérience reconnue dans le secteur, notre équipe sélectionne avec soin chaque produit pour garantir confort, élégance et performance.
-
-Que vous soyez coiffeur, esthéticienne ou gérant d'un spa, nous avons la solution adaptée à vos besoins.`;
+  Notre mission : vous accompagner dans votre routine beauté en mettant à votre disposition des articles innovants, durables et esthétiques, soigneusement choisis pour leur fiabilité et leur efficacité.
+  
+  Que vous souhaitiez aménager un coin coiffure, un espace bien-être ou simplement profiter d’accessoires professionnels à domicile, Ince-Shop a la solution qu’il vous faut.`;
 
   return (
     <div className="min-h-screen bg-gray-50">
